@@ -1,0 +1,56 @@
+using UnityEngine;
+
+public class Pokemon : MonoBehaviour
+{
+    public string[,] TiposPokemon = new string[5, 5];
+    void Start()
+    {
+        TiposPokemon[0, 0] = "1";
+        TiposPokemon[0, 1] = "1";
+        TiposPokemon[0, 2] = "1";
+        TiposPokemon[0, 3] = "1";
+        TiposPokemon[0, 4] = "1";
+
+        TiposPokemon[1, 0] = "5";
+        TiposPokemon[1, 1] = "1";
+        TiposPokemon[1, 2] = "-1";
+        TiposPokemon[1, 3] = "-1";
+        TiposPokemon[1, 4] = "1";
+
+        TiposPokemon[2, 0] = "1";
+        TiposPokemon[2, 1] = "5";
+        TiposPokemon[2, 2] = "1";
+        TiposPokemon[2, 3] = "1";
+        TiposPokemon[2, 4] = "1";
+
+        TiposPokemon[3, 0] = "1";
+        TiposPokemon[3, 1] = "1";
+        TiposPokemon[3, 2] = "1";
+        TiposPokemon[3, 3] = "-1";
+        TiposPokemon[3, 4] = "-1";
+
+        TiposPokemon[4, 0] = "1";
+        TiposPokemon[4, 1] = "1";
+        TiposPokemon[4, 2] = "0";
+        TiposPokemon[4, 3] = "5";
+        TiposPokemon[4, 4] = "1";
+
+        MostrarTabla(TiposPokemon);
+    }
+    public void MostrarTabla(string[,] misPokemons)
+    {
+        string texto = "Tipos de Pokemons \n";
+        texto += "========\n";
+
+        for (int fila = 0; fila < misPokemons.GetLength(0); fila++)
+        {
+            texto += "Efectividad del Pokemon : " + fila + ": ";
+            for (int col = 0; col < misPokemons.GetLength(1); col++)
+            {
+                texto += misPokemons[fila, col] + " ";
+            }
+            texto += "\n";
+        }
+        Debug.Log(texto);
+    }
+}
